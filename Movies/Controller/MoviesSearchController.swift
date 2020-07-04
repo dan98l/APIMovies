@@ -13,8 +13,8 @@ import UIKit
 final class MoviesSearchController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var searchMovies: UISearchBar!
+    @IBOutlet private weak var table: UITableView!
+    @IBOutlet private weak var searchMovies: UISearchBar!
 
     private var viewMovies = MoviesSearch()
     

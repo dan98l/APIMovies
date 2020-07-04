@@ -11,12 +11,12 @@ import UIKit
 final class AboutMovie: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieDate: UILabel!
-    @IBOutlet weak var movieAverage: UILabel!
-    @IBOutlet weak var movieOverview: UILabel!
-    @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var clickButton: UIButton!
+    @IBOutlet private weak var movieImageView: UIImageView!
+    @IBOutlet private weak var movieDate: UILabel!
+    @IBOutlet private weak var movieAverage: UILabel!
+    @IBOutlet private weak var movieOverview: UILabel!
+    @IBOutlet private weak var movieTitle: UILabel!
+    @IBOutlet private weak var clickButton: UIButton!
     
     // MARK: - Properties
     private var viewMovies = MoviesPopular()
@@ -58,6 +58,7 @@ final class AboutMovie: UIViewController {
     }
     
     private func getYoutubePath() {
+        
         yuotubePath.fetchYouTubePath(id: movie.id!) { [weak self] in
             self?.youTubePathString = "https://www.youtube.com/watch?v=\(self!.yuotubePath.fetchPathVidoe())"
             self?.animaredButtonAndImage()
@@ -65,9 +66,13 @@ final class AboutMovie: UIViewController {
     }
     
     private func animaredButtonAndImage() {
-        UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseInOut, animations: {
-        self.clickButton.alpha = 1.0
-        }) { _ in print("Animation Done") }
+        if self.yuotubePath.fetchPathVidoe() == "" {
+            self.clickButton.isHidden = true
+        } else {
+            UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseInOut, animations: {
+            self.clickButton.alpha = 1.0
+            }) { _ in print("Animation Done") }
+        }
     }
     
    

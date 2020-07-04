@@ -27,7 +27,12 @@ final class YouTubePath {
     }
     
     func fetchPathVidoe() -> String {
-        return trailerData[0].key!
+        
+        if let path = trailerData.first?.key {
+             return path
+        } else {
+             return ""
+        }
     }
     
 }

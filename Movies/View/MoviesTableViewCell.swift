@@ -11,11 +11,11 @@ import UIKit
 class MoviesTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var movieImageViewForBluer: UIImageView!
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var movieAverage: UILabel!
-    @IBOutlet weak var movieOverview: UILabel!
+    @IBOutlet private weak var movieImageViewForBluer: UIImageView!
+    @IBOutlet private weak var movieImageView: UIImageView!
+    @IBOutlet private weak var movieTitle: UILabel!
+    @IBOutlet private weak var movieAverage: UILabel!
+    @IBOutlet private weak var movieOverview: UILabel!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     var movie: Movie! {

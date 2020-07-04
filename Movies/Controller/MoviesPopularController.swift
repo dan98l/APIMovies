@@ -11,7 +11,7 @@ import UIKit
 final class MoviesPopularController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet private weak var table: UITableView!
     
     // MARK: - Properties
     private var viewMovies = MoviesPopular()
@@ -58,7 +58,7 @@ extension MoviesPopularController: UITableViewDelegate, UITableViewDataSource {
         cell.layer.transform = rotationTransform
         cell.alpha = 0.7
         
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             cell.alpha = 1.0
             cell.layer.transform = CATransform3DIdentity
         })

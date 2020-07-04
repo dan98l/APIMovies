@@ -12,7 +12,7 @@ import WebKit
 final class YouTubeView: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet private weak var webView: WKWebView!
     
     // MARK: - Properties
     var urlString = ""
